@@ -9,8 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
          :root {
-            --primary-blue: #d4a017;
-            --gold-accent: #d4a017;
+            --primary-gold: #d4a017;
+            --dark-gold: #b78c14;
             --light-bg: #f8f9fa;
         }
         
@@ -21,32 +21,13 @@
             line-height: 1.6;
         }
         
-        header {
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        nav a {
-            color: white;
-            margin: 0 12px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        nav a:hover {
-            color: var(--gold-accent);
-        }
-        
         .contact-header {
-            background: linear-gradient(white), url('https://images.unsplash.com/photo-1581852017103-68e8115e1e47?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1581852017103-68e8115e1e47?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            padding: 5rem 0;
-            color: rgb(18, 18, 18);
-            margin-bottom: 3rem;
+            padding: 6rem 0;
+            color: white;
+            text-align: center;
         }
         
         .contact-card {
@@ -54,19 +35,19 @@
             border-radius: 8px;
             padding: 2rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
             height: 100%;
-            border-top: 3px solid var(--primary-blue);
+            border-top: 4px solid var(--primary-gold);
         }
         
         .contact-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
         
         .contact-icon {
             font-size: 2.5rem;
-            color: var(--primary-blue);
+            color: var(--primary-gold);
             margin-bottom: 1rem;
         }
         
@@ -75,34 +56,37 @@
             border-radius: 8px;
             padding: 2rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--primary-gold);
         }
         
         .form-control:focus {
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 0.25rem rgba(70, 130, 180, 0.25);
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 0.25rem rgba(212, 160, 23, 0.25);
         }
         
-        .btn-primary {
-            background-color: var(--primary-blue);
-            border-color: var(--primary-blue);
+        .btn-gold {
+            background-color: var(--primary-gold);
+            border-color: var(--primary-gold);
+            color: white;
         }
         
-        .btn-primary:hover {
-            background-color: #3a6d96;
-            border-color: #3a6d96;
+        .btn-gold:hover {
+            background-color: var(--dark-gold);
+            border-color: var(--dark-gold);
         }
         
         .map-container {
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
         }
         
         .social-links a {
             display: inline-block;
             width: 40px;
             height: 40px;
-            background: var(--primary-blue);
+            background: var(--primary-gold);
             color: white;
             border-radius: 50%;
             text-align: center;
@@ -112,41 +96,76 @@
         }
         
         .social-links a:hover {
-            background: var(--gold-accent);
+            background: var(--dark-gold);
             transform: translateY(-3px);
         }
         
-        footer {
-            background-color: #343a40;
+        .floating-contact-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--primary-gold);
             color: white;
-            padding: 2rem 0;
-            margin-top: 3rem;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+        
+        .floating-contact-btn:hover {
+            background: var(--dark-gold);
+            transform: scale(1.1);
+        }
+        
+        .office-hours {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .office-hours li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .office-hours li:last-child {
+            border-bottom: none;
+        }
+        /* Responsive adjustments */
+        
+        @media (max-width: 768px) {
+            .contact-header {
+                padding: 4rem 0;
+            }
+            .floating-contact-btn {
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                font-size: 1.2rem;
+                bottom: 20px;
+                right: 20px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <header class="sticky-top">
-        <div class="container">
-            <h1 class="text-center mb-3">Contact Us</h1>
-            <nav class="d-flex justify-content-center">
-                <a href="index.html">Home</a>
-                <a href="fort.html">Fort</a>
-                <a href="desert.html">Desert</a>
-                <a href="culture.html">Culture</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </div>
-    </header>
+    <!-- Navigation would be included from a shared header file -->
 
-    <section class="contact-header text-center">
+    <section class="contact-header">
         <div class="container">
-            <h2 class="display-4 mb-3"><b>Get In Touch</b></h2>
-            <p class="lead">We're here to help you plan your perfect Jaisalmer experience</p>
+            <h1 class="display-4 mb-3">Contact Jaisalmer Tourism</h1>
+            <p class="lead">We're here to help you plan your golden city adventure</p>
         </div>
     </section>
 
-    <main class="container mb-5">
+    <main class="container my-5">
         <div class="row g-4 mb-5">
             <div class="col-md-4">
                 <div class="contact-card text-center">
@@ -155,6 +174,7 @@
                     </div>
                     <h3>Email Us</h3>
                     <p><a href="mailto:info@jaisalmertourism.com" class="text-decoration-none">info@jaisalmertourism.com</a></p>
+                    <p><a href="mailto:bookings@jaisalmertourism.com" class="text-decoration-none">bookings@jaisalmertourism.com</a></p>
                 </div>
             </div>
 
@@ -164,8 +184,9 @@
                         <i class="bi bi-telephone-fill"></i>
                     </div>
                     <h3>Call Us</h3>
-                    <p>+91-9876543210</p>
-                    <p>+91-9876543211</p>
+                    <p>Tour Inquiries: +91-9829412345</p>
+                    <p>Customer Support: +91-9829412346</p>
+                    <p class="mt-2 small">Available 8AM-8PM daily</p>
                 </div>
             </div>
 
@@ -176,68 +197,131 @@
                     </div>
                     <h3>Visit Us</h3>
                     <p>Jaisalmer Tourism Office</p>
-                    <p>Fort Road, Jaisalmer, Rajasthan</p>
+                    <p>Near Fort Entrance, Jaisalmer</p>
+                    <p>Rajasthan 345001, India</p>
                 </div>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-lg-6 mb-4">
+            <div class="col-lg-7 mb-4">
                 <div class="contact-form">
                     <h3 class="mb-4">Send Us a Message</h3>
-                    <form>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Your Name</label>
-                            <input type="text" class="form-control" id="name" required>
+                    <form id="contactForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Your Name *</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email Address</label>
-                            <input type="email" class="form-control" id="email" required>
+                            <label for="subject" class="form-label">Subject *</label>
+                            <select class="form-select" id="subject" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="Tour Booking">Tour Booking</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Feedback">Feedback</option>
+                                <option value="Group Travel">Group Travel</option>
+                                <option value="Other">Other</option>
+                            </select>
                         </div>
                         <div class="mb-3">
-                            <label for="subject" class="form-label">Subject</label>
-                            <input type="text" class="form-control" id="subject" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
+                            <label for="message" class="form-label">Your Message *</label>
                             <textarea class="form-control" id="message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-gold">
+                            <span class="spinner-border spinner-border-sm d-none" id="spinner"></span>
+                            Send Message
+                        </button>
+                        <div id="formSuccess" class="alert alert-success mt-3 d-none">
+                            Thank you! Your message has been sent. We'll respond within 24 hours.
+                        </div>
                     </form>
                 </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-5">
                 <div class="map-container ratio ratio-16x9 mb-4">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3529.325715733434!2d70.91276931505914!3d26.91586818321381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3948c5652a3a6a0d%3A0x5a1e6e3b3a3a3a3a!2sJaisalmer%20Fort!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
                         allowfullscreen="" loading="lazy"></iframe>
                 </div>
 
+                <div class="office-hours mb-4">
+                    <h4 class="mb-3">Office Hours</h4>
+                    <ul class="list-unstyled">
+                        <li><strong>Monday-Friday:</strong> 9:00 AM - 6:00 PM</li>
+                        <li><strong>Saturday:</strong> 9:00 AM - 4:00 PM</li>
+                        <li><strong>Sunday:</strong> 10:00 AM - 2:00 PM</li>
+                        <li><strong>Holidays:</strong> Closed (Check for special hours)</li>
+                    </ul>
+                </div>
+
                 <div class="text-center">
                     <h4 class="mb-3">Connect With Us</h4>
                     <div class="social-links">
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-
-                        <a href="#"><i class="bi bi-youtube"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" title="Twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="#" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
                     </div>
+                    <p class="mt-3 small">Follow us for updates and travel tips</p>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer class="text-center">
-        <div class="container">
-            <p>&copy; 2023 Jaisalmer Tourism. All rights reserved.</p>
-            <p class="text-muted">Designed to help you discover the Golden City</p>
-        </div>
-    </footer>
+    <!-- Floating Contact Button -->
+    <a href="#contactForm" class="floating-contact-btn">
+        <i class="bi bi-chat-dots"></i>
+    </a>
+
+    <!-- Footer would be included from a shared footer file -->
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const spinner = document.getElementById('spinner');
+            const successMsg = document.getElementById('formSuccess');
+
+            // Show loading spinner
+            spinner.classList.remove('d-none');
+
+            // Simulate form submission (replace with actual AJAX call)
+            setTimeout(function() {
+                spinner.classList.add('d-none');
+                successMsg.classList.remove('d-none');
+
+                // Reset form
+                document.getElementById('contactForm').reset();
+
+                // Hide success message after 5 seconds
+                setTimeout(function() {
+                    successMsg.classList.add('d-none');
+                }, 5000);
+            }, 1500);
+        });
+
+        // Smooth scrolling for floating button
+        document.querySelector('.floating-contact-btn').addEventListener('click', function(e) {
+            if (document.getElementById('contactForm')) {
+                e.preventDefault();
+                document.getElementById('contactForm').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
