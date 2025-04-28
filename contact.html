@@ -232,6 +232,95 @@
             color: white;
             border-radius: 18px 18px 4px 18px;
         }
+        /* Tour Booking Widget Styles */
+        
+        .booking-widget {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--primary-gold);
+        }
+        
+        .booking-widget h4 {
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .tour-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .tour-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tour-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .tour-card-body {
+            padding: 1rem;
+        }
+        
+        .tour-card-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tour-price {
+            font-weight: 700;
+            color: var(--primary-gold);
+            margin: 0.5rem 0;
+        }
+        
+        .tour-meta {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tour-meta i {
+            margin-right: 5px;
+            color: var(--primary-gold);
+        }
+        
+        .quick-book-btn {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 0.9rem;
+        }
+        /* Datepicker Styles */
+        
+        .datepicker {
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .datepicker-dropdown:after {
+            border-bottom-color: var(--primary-gold);
+        }
+        
+        .datepicker table tr td.active.active,
+        .datepicker table tr td.active.highlighted.active,
+        .datepicker table tr td.active.highlighted:active,
+        .datepicker table tr td.active:active {
+            background-color: var(--primary-gold);
+            border-color: var(--primary-gold);
+        }
+        
+        .datepicker table tr td.today {
+            background-color: rgba(212, 160, 23, 0.2);
+        }
         /* Responsive adjustments */
         
         @media (max-width: 768px) {
@@ -255,8 +344,13 @@
                 left: 5%;
                 bottom: 80px;
             }
+            .tour-card {
+                margin-bottom: 1.5rem;
+            }
         }
     </style>
+    <!-- Bootstrap Datepicker CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
 </head>
 
 <body>
@@ -346,9 +440,114 @@
                         </div>
                     </form>
                 </div>
+
+                <!-- Tour Booking Widget -->
+                <div class="booking-widget">
+                    <h4>Popular Tours</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="tour-card">
+                                <img src="https://images.unsplash.com/photo-1581852057101-5a0d0b1d0292?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Desert Safari">
+                                <div class="tour-card-body">
+                                    <h5 class="tour-card-title">Desert Safari</h5>
+                                    <div class="tour-meta">
+                                        <i class="bi bi-clock"></i> 4 Hours
+                                        <i class="bi bi-people ms-2"></i> 2-8 People
+                                    </div>
+                                    <div class="tour-price">₹2,500 per person</div>
+                                    <button class="btn btn-gold quick-book-btn" data-bs-toggle="modal" data-bs-target="#bookTourModal" data-tour="Desert Safari">
+                                        Quick Book
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="tour-card">
+                                <img src="https://images.unsplash.com/photo-1581852057101-5a0d0b1d0292?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fort Tour">
+                                <div class="tour-card-body">
+                                    <h5 class="tour-card-title">Fort Tour</h5>
+                                    <div class="tour-meta">
+                                        <i class="bi bi-clock"></i> 3 Hours
+                                        <i class="bi bi-people ms-2"></i> 1-10 People
+                                    </div>
+                                    <div class="tour-price">₹1,800 per person</div>
+                                    <button class="btn btn-gold quick-book-btn" data-bs-toggle="modal" data-bs-target="#bookTourModal" data-tour="Fort Tour">
+                                        Quick Book
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="tour-card">
+                                <img src="https://images.unsplash.com/photo-1581852057101-5a0d0b1d0292?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Cultural Experience">
+                                <div class="tour-card-body">
+                                    <h5 class="tour-card-title">Cultural Experience</h5>
+                                    <div class="tour-meta">
+                                        <i class="bi bi-clock"></i> 6 Hours
+                                        <i class="bi bi-people ms-2"></i> 2-15 People
+                                    </div>
+                                    <div class="tour-price">₹3,200 per person</div>
+                                    <button class="btn btn-gold quick-book-btn" data-bs-toggle="modal" data-bs-target="#bookTourModal" data-tour="Cultural Experience">
+                                        Quick Book
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="tour-card">
+                                <img src="https://images.unsplash.com/photo-1581852057101-5a0d0b1d0292?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Overnight Camping">
+                                <div class="tour-card-body">
+                                    <h5 class="tour-card-title">Overnight Camping</h5>
+                                    <div class="tour-meta">
+                                        <i class="bi bi-clock"></i> 24 Hours
+                                        <i class="bi bi-people ms-2"></i> 2-12 People
+                                    </div>
+                                    <div class="tour-price">₹4,500 per person</div>
+                                    <button class="btn btn-gold quick-book-btn" data-bs-toggle="modal" data-bs-target="#bookTourModal" data-tour="Overnight Camping">
+                                        Quick Book
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="col-lg-5">
+                <!-- Quick Booking Widget -->
+                <div class="booking-widget">
+                    <h4>Quick Booking</h4>
+                    <form id="quickBookingForm">
+                        <div class="mb-3">
+                            <label for="tourType" class="form-label">Tour Type</label>
+                            <select class="form-select" id="tourType" required>
+                                <option value="" selected disabled>Select a tour</option>
+                                <option value="Desert Safari">Desert Safari</option>
+                                <option value="Fort Tour">Fort Tour</option>
+                                <option value="Cultural Experience">Cultural Experience</option>
+                                <option value="Overnight Camping">Overnight Camping</option>
+                                <option value="Custom Tour">Custom Tour</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="tourDate" class="form-label">Tour Date</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control datepicker" id="tourDate" placeholder="Select date" required>
+                                <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="participants" class="form-label">Number of Participants</label>
+                            <input type="number" class="form-control" id="participants" min="1" max="20" value="2" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="specialRequests" class="form-label">Special Requests</label>
+                            <textarea class="form-control" id="specialRequests" rows="2"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-gold w-100">Check Availability</button>
+                    </form>
+                </div>
+
                 <div class="map-container ratio ratio-16x9 mb-4">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3529.325715733434!2d70.91276931505914!3d26.91586818321381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3948c5652a3a6a0d%3A0x5a1e6e3b3a3a3a3a!2sJaisalmer%20Fort!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
                         allowfullscreen="" loading="lazy"></iframe>
@@ -377,6 +576,54 @@
             </div>
         </div>
     </main>
+
+    <!-- Tour Booking Modal -->
+    <div class="modal fade" id="bookTourModal" tabindex="-1" aria-labelledby="bookTourModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bookTourModalLabel">Book Your Tour</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="tourBookingForm">
+                        <input type="hidden" id="selectedTour">
+                        <div class="mb-3">
+                            <label for="modalTourDate" class="form-label">Tour Date</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control datepicker" id="modalTourDate" required>
+                                <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modalParticipants" class="form-label">Number of Participants</label>
+                            <input type="number" class="form-control" id="modalParticipants" min="1" max="20" value="2" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modalName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="modalName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modalEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="modalEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modalPhone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="modalPhone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="modalRequests" class="form-label">Special Requests</label>
+                            <textarea class="form-control" id="modalRequests" rows="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-gold" id="confirmBooking">Confirm Booking</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Floating Contact Button -->
     <a href="#contactForm" class="floating-contact-btn">
@@ -421,8 +668,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Datepicker JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
     <script>
+        // Initialize datepicker
+        $(document).ready(function() {
+            $('.datepicker').datepicker({
+                format: 'dd/mm/yyyy',
+                autoclose: true,
+                todayHighlight: true,
+                startDate: '+1d'
+            });
+        });
+
         // Form submission handling
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -446,6 +705,40 @@
                     successMsg.classList.add('d-none');
                 }, 5000);
             }, 1500);
+        });
+
+        // Quick Booking Form
+        document.getElementById('quickBookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const tourType = document.getElementById('tourType').value;
+            const tourDate = document.getElementById('tourDate').value;
+            const participants = document.getElementById('participants').value;
+
+            alert(`Checking availability for ${participants} people on ${tourDate} for ${tourType}. We'll contact you shortly!`);
+            this.reset();
+        });
+
+        // Tour Booking Modal
+        const bookTourModal = new bootstrap.Modal(document.getElementById('bookTourModal'));
+
+        document.querySelectorAll('.quick-book-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const tourName = this.getAttribute('data-tour');
+                document.getElementById('selectedTour').value = tourName;
+                document.getElementById('bookTourModalLabel').textContent = `Book ${tourName}`;
+            });
+        });
+
+        document.getElementById('confirmBooking').addEventListener('click', function() {
+            const tourName = document.getElementById('selectedTour').value;
+            const tourDate = document.getElementById('modalTourDate').value;
+            const participants = document.getElementById('modalParticipants').value;
+            const name = document.getElementById('modalName').value;
+
+            alert(`Thank you ${name}! Your booking for ${tourName} on ${tourDate} for ${participants} people has been received.`);
+            bookTourModal.hide();
+            document.getElementById('tourBookingForm').reset();
         });
 
         // Smooth scrolling for floating button
