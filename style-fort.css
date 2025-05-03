@@ -116,3 +116,13 @@ footer a:hover {
 img:hover {
   transform: translateY(-6px) scale(1);
 }
+
+#word {
+  color: black; /* Default text color */
+  transition: color 0.4s ease-in-out; /* Smooth color change */
+}
+
+#word:hover {
+  color: red; /* New color on hover */
+}
+
