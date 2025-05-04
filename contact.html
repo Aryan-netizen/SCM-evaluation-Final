@@ -13,35 +13,47 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
          :root {
-            --primary-color: #4682b4;
-            --secondary-color: #f0f8ff;
+            --primary-color: #2c5e8f;
+            --secondary-color: #f8fafc;
             --accent-color: #d4af37;
+            --text-color: #333;
+            --light-text: #6c757d;
         }
         
         body {
             background-color: var(--secondary-color);
-            font-family: 'Poppins', Tahoma, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
-            line-height: 1.6;
-            color: #333;
+            line-height: 1.7;
+            color: var(--text-color);
         }
         
         header {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), #1a3a5a);
             color: white;
-            padding: 1.5rem 1rem;
+            padding: 1.8rem 1rem;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
         }
         
         h1 {
-            font-weight: 600;
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
+            margin-bottom: 1.2rem;
+            font-size: 2.8rem;
+            letter-spacing: -0.5px;
         }
         
         nav a {
@@ -50,134 +62,251 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
-            padding: 5px 10px;
+            padding: 8px 12px;
             border-radius: 4px;
+            font-size: 1.05rem;
         }
         
         nav a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.15);
             transform: translateY(-2px);
         }
         
         main {
             max-width: 1200px;
-            margin: 3rem auto;
+            margin: 4rem auto;
             padding: 2rem;
+        }
+        
+        .page-header {
             text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-header p {
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
         }
         
         .contact-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 2.5rem;
+            margin-top: 3rem;
         }
         
         .contact-card {
             background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            width: 300px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+            padding: 2.5rem;
+            width: 340px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            text-align: center;
         }
         
         .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
         
         .contact-icon {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--primary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            background: rgba(44, 94, 143, 0.1);
+            width: 80px;
+            height: 80px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
         }
         
         .contact-title {
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             color: var(--primary-color);
+            font-size: 1.4rem;
         }
         
         .contact-info {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--light-text);
+            line-height: 1.8;
         }
         
-        .contact-form {
+        .btn-outline-primary {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            font-weight: 500;
+            padding: 10px 25px;
+            border-width: 2px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .contact-section {
             background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            margin: 3rem auto 0;
-            max-width: 600px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: left;
+            border-radius: 12px;
+            padding: 3rem;
+            margin: 5rem auto 0;
+            max-width: 800px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent-color);
         }
         
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
         }
         
         .form-control {
-            border-radius: 5px;
-            padding: 10px 15px;
-            border: 1px solid #ddd;
-            transition: border-color 0.3s ease;
+            border-radius: 6px;
+            padding: 12px 18px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+            font-size: 1rem;
         }
         
         .form-control:focus {
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 0.25rem rgba(70, 130, 180, 0.25);
+            box-shadow: 0 0 0 0.25rem rgba(44, 94, 143, 0.15);
+        }
+        
+        textarea.form-control {
+            min-height: 180px;
         }
         
         .btn-primary {
             background-color: var(--primary-color);
             border: none;
-            padding: 10px 25px;
+            padding: 12px 30px;
             font-weight: 500;
+            letter-spacing: 0.5px;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.95rem;
         }
         
         .btn-primary:hover {
-            background-color: #3a6d99;
+            background-color: #234a73;
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(44, 94, 143, 0.3);
+        }
+        
+        .social-section {
+            text-align: center;
+            margin-top: 5rem;
+        }
+        
+        .social-title {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
         }
         
         .social-links {
-            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
         }
         
         .social-links a {
-            display: inline-block;
-            margin: 0 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: white;
             color: var(--primary-color);
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
+            font-size: 1.4rem;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.03);
         }
         
         .social-links a:hover {
-            transform: translateY(-3px) scale(1.1);
-            color: #3a6d99;
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(44, 94, 143, 0.2);
         }
         
         footer {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), #1a3a5a);
             color: white;
             text-align: center;
-            padding: 1.5rem;
-            margin-top: 3rem;
+            padding: 2.5rem;
+            margin-top: 5rem;
+        }
+        
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        @media (max-width: 992px) {
+            .contact-card {
+                width: 300px;
+                padding: 2rem;
+            }
         }
         
         @media (max-width: 768px) {
             h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             nav a {
-                margin: 0 8px;
-                font-size: 0.9rem;
+                margin: 0 10px;
+                font-size: 1rem;
+                padding: 6px 10px;
             }
             .contact-card {
                 width: 100%;
+                max-width: 400px;
+            }
+            .contact-section {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2rem;
+            }
+            nav a {
+                display: block;
+                margin: 10px auto;
+                width: fit-content;
+            }
+            .contact-section {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -196,8 +325,10 @@
     </header>
 
     <main>
-        <h2 class="animate__animated animate__fadeIn">Get in Touch with Jaisalmer Tourism</h2>
-        <p class="animate__animated animate__fadeIn animate__delay-1s">We'd love to hear from you! Reach out through any of these channels or send us a message directly.</p>
+        <div class="page-header animate__animated animate__fadeIn">
+            <h2>Get in Touch</h2>
+            <p>Our team at Jaisalmer Tourism is here to assist you with any inquiries. Whether you need travel information, have questions about our services, or want to provide feedback, we're just a message away.</p>
+        </div>
 
         <div class="contact-container">
             <div class="contact-card animate__animated animate__fadeInLeft">
@@ -205,7 +336,8 @@
                     <i class="fas fa-envelope"></i>
                 </div>
                 <h3 class="contact-title">Email Us</h3>
-                <p class="contact-info">info@jaisalmertourism.com</p>
+                <p class="contact-info">For general inquiries, partnership opportunities, or media requests</p>
+                <p><strong>info@jaisalmertourism.com</strong></p>
                 <a href="mailto:info@jaisalmertourism.com" class="btn btn-outline-primary">Send Email</a>
             </div>
 
@@ -214,8 +346,9 @@
                     <i class="fas fa-phone-alt"></i>
                 </div>
                 <h3 class="contact-title">Call Us</h3>
-                <p class="contact-info">+91-9876543210</p>
-                <p class="contact-info">+91-02992-252222</p>
+                <p class="contact-info">Available Monday to Saturday, 9:00 AM to 6:00 PM IST</p>
+                <p><strong>+91-9876543210</strong></p>
+                <p><strong>+91-02992-252222</strong></p>
                 <a href="tel:+919876543210" class="btn btn-outline-primary">Call Now</a>
             </div>
 
@@ -223,42 +356,55 @@
                 <div class="contact-icon">
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
-                <h3 class="contact-title">Visit Us</h3>
-                <p class="contact-info">Jaisalmer Tourism Office<br> Fort Road, Near Patwa Haveli<br> Jaisalmer, Rajasthan 345001</p>
+                <h3 class="contact-title">Visit Our Office</h3>
+                <p class="contact-info">Open Monday to Friday, 10:00 AM to 5:00 PM</p>
+                <p><strong>Jaisalmer Tourism Office<br>
+                Fort Road, Near Patwa Haveli<br>
+                Jaisalmer, Rajasthan 345001</strong></p>
                 <a href="https://maps.google.com" target="_blank" class="btn btn-outline-primary">Get Directions</a>
             </div>
         </div>
 
-        <div class="contact-form animate__animated animate__fadeIn animate__delay-1s">
-            <h3>Send Us a Message</h3>
+        <div class="contact-section animate__animated animate__fadeIn animate__delay-1s">
+            <h3 class="section-title">Send Us a Message</h3>
             <form>
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name *</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email address" required>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text" class="form-control" id="subject" placeholder="What's your inquiry about?">
                 </div>
                 <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" class="form-control" id="subject" placeholder="What's this about?">
+                    <label for="message" class="form-label">Your Message *</label>
+                    <textarea class="form-control" id="message" rows="6" placeholder="Please type your message here..." required></textarea>
                 </div>
-                <div class="form-group">
-                    <label for="message">Your Message</label>
-                    <textarea class="form-control" id="message" rows="5" placeholder="Type your message here..." required></textarea>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Send Message</button>
                 </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
         </div>
 
-        <div class="social-links animate__animated animate__fadeIn animate__delay-2s">
-            <h4>Connect With Us</h4>
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://wa.me/919876543210" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <div class="social-section animate__animated animate__fadeIn animate__delay-2s">
+            <h4 class="social-title">Follow Us On Social Media</h4>
+            <div class="social-links">
+                <a href="https://facebook.com/jaisalmertourism" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/jaisalmertourism" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/jaisalmertourism" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://youtube.com/jaisalmertourism" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://wa.me/919876543210" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
         </div>
     </main>
 
