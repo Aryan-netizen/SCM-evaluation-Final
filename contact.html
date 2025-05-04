@@ -1,532 +1,73 @@
-<!DOCTYPE html>    
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contact | Jaisalmer Tourism</title>
-    
+<<<<<<< HEAD <!DOCTYPE html>
+    =======
+    <!DOCTYPE html> >>>>>>> 29a02ed (added contact page)
+    <html lang="en">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Animate.css for subtle animations -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <head>
 
-    <style>
-        body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e0f7fa 100%);
-            font-family: 'Poppins', sans-serif;
-            min-height: 100vh;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #4682b4 0%, #2a5779 100%);
-            color: white;
-            padding: 1.5rem 0;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 8px 12px;
-            border-radius: 8px;
-        }
-        
-        nav a:hover {
-            color: #ffd700;
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-        
-        .card {
-            margin-top: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
-            border: none;
-            overflow: hidden;
-        }
-        
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
-        }
-        
-        .card-header {
-            background: linear-gradient(135deg, #4682b4 0%, #2a5779 100%);
-            color: white;
-            font-weight: 600;
-            border-bottom: none;
-            padding: 1.2rem;
-        }
-        
-        .btn-custom {
-            background: linear-gradient(135deg, #4682b4 0%, #2a5779 100%);
-            color: white;
-            border-radius: 50px;
-            padding: 12px 35px;
-            font-weight: 500;
-            border: none;
-            transition: all 0.3s ease;
-            letter-spacing: 0.5px;
-        }
-        
-        .btn-custom:hover {
-            background: linear-gradient(135deg, #3a6d96 0%, #1e4561 100%);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(58, 109, 150, 0.3);
-        }
-        
-        .live-chat-btn {
-            background: linear-gradient(135deg, #32cd32 0%, #28a428 100%);
-            border-radius: 50px;
-            padding: 12px 35px;
-            font-weight: 500;
-        }
-        
-        .live-chat-btn:hover {
-            background: linear-gradient(135deg, #28a428 0%, #1e7e1e 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(40, 164, 40, 0.3);
-        }
-        
-        .whatsapp-float {
-            position: fixed;
-            width: 65px;
-            height: 65px;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            color: white;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 35px;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
-            z-index: 100;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-        
-        .whatsapp-float:hover {
-            transform: scale(1.1) translateY(-5px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-        }
-        
-        .contact-icon {
-            font-size: 2rem;
-            color: #4682b4;
-            margin-bottom: 1rem;
-        }
-        
-        .form-control,
-        .form-select {
-            padding: 12px 15px;
-            border-radius: 10px;
-            border: 1px solid #ced4da;
-            transition: all 0.3s ease;
-        }
-        
-        .form-control:focus,
-        .form-select:focus {
-            border-color: #4682b4;
-            box-shadow: 0 0 0 0.25rem rgba(70, 130, 180, 0.25);
-        }
-        
-        footer {
-            background: linear-gradient(135deg, #4682b4 0%, #2a5779 100%);
-            color: white;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 5rem;
-            font-size: 0.9rem;
-            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        .social-icons {
-            margin-top: 1.5rem;
-        }
-        
-        .social-icons a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            color: #ffd700;
-            transform: translateY(-3px);
-        }
-        
-        .map-container {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-            margin-top: 2rem;
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 300px;
-            border: none;
-        }
-        
-        .highlight-text {
-            color: #4682b4;
-            font-weight: 600;
-        }
-    </style>
-</head>
+        <meta charset="UTF-8">
+        <<<<<<< HEAD <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Contact | Jaisalmer Tourism</title>
 
-<body>
 
-    <header class="animate__animated animate__fadeInDown">
-        <h1>Contact Us</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="fort.html">Fort</a>
-            <a href="desert.html">Desert</a>
-            <a href="culture.html">Culture</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+            <!-- Bootstrap CSS -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+            <!-- Animate.css for subtle animations -->
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+            <!-- Font Awesome for icons -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+            <!-- Google Fonts -->
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> =======
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Contact</title>
+            <link rel="stylesheet" href="style-contact.css"> >>>>>>> 29a02ed (added contact page)
+            <style>
+                body {
+                    background-color: #f0f8ff;
+                    font-family: Tahoma, sans-serif;
+                    margin: 0;
+                }
+                
+                header {
+                    background-color: #4682b4;
+                    color: white;
+                    padding: 1rem;
+                    text-align: center;
+                }
+                
+                nav a {
+                    color: white;
+                    margin: 0 10px;
+                    text-decoration: none;
+                }
+                
+                main {
+                    text-align: center;
+                    padding: 2rem;
+                }
+            </style>
+    </head>
 
-    <main class="container my-5">
+    <body>
+        <header>
+            <h1>Contact Us</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="fort.html">Fort</a>
+                <a href="desert.html">Desert</a>
+                <a href="culture.html">Culture</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+        <main>
+            <p>Email us at: info@jaisalmertourism.com</p>
+            <p>Phone: ‪+91-9876543210‬</p>
+        </main>
+    </body>
 
-        <!-- Contact Info with Icons -->
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card p-4 animate__animated animate__fadeInUp animate__delay-1s h-100">
-                    <div class="text-center">
-                        <i class="fas fa-envelope contact-icon"></i>
-                        <h3 class="text-primary mb-3">Email Us</h3>
-                        <p>Have questions? We're here to help!</p>
-                        <a href="mailto:info@jaisalmertourism.com" class="highlight-text">info@jaisalmertourism.com</a>
-                    </div>
-                </div>
-            </div>
+    <<<<<<< HEAD </html>
 
-            <div class="col-md-4">
-                <div class="card p-4 animate__animated animate__fadeInUp animate__delay-2s h-100">
-                    <div class="text-center">
-                        <i class="fas fa-phone-alt contact-icon"></i>
-                        <h3 class="text-primary mb-3">Call Us</h3>
-                        <p>Speak directly with our travel experts</p>
-                        <a href="tel:+919876543210" class="highlight-text">+91-9876543210</a>
-                    </div>
-                </div>
-            </div>
+        =======
 
-            <div class="col-md-4">
-                <div class="card p-4 animate__animated animate__fadeInUp animate__delay-3s h-100">
-                    <div class="text-center">
-                        <i class="fas fa-clock contact-icon"></i>
-                        <h3 class="text-primary mb-3">Working Hours</h3>
-                        <p>Monday - Friday: 9:00 AM to 7:00 PM</p>
-                        <p>Saturday - Sunday: 10:00 AM to 5:00 PM</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Location Map -->
-        <div class="map-container animate__animated animate__fadeInUp animate__delay-4s">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.9883160860216!2d70.9082573150326!3d26.23807298343889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3945c7b5a7e4d6d5%3A0x3f7d3a3b3e3b3b3d!2sJaisalmer%20Fort!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
-                allowfullscreen="" loading="lazy"></iframe>
-        </div>
-
-        <!-- Booking Form -->
-        <div class="row mt-5">
-            <div class="col-lg-6">
-                <div class="card p-4 animate__animated animate__fadeInUp animate__delay-5s h-100">
-                    <div class="card-header text-center">
-                        <h2>Plan Your Jaisalmer Adventure</h2>
-                    </div>
-                    <div class="card-body">
-                        <form class="row g-3">
-                            <div class="col-md-6">
-                                <label for="name" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
-                            </div>
-                            <div class="col-12">
-                                <label for="phone" class="form-label">Phone Number</label>
-                                <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="date" class="form-label">Tour Date</label>
-                                <input type="date" class="form-control" id="date" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="tour" class="form-label">Tour Package</label>
-                                <select class="form-select" id="tour" required>
-                                    <option value="">Select Tour</option>
-                                    <option value="fort">Golden Fort Exploration</option>
-                                    <option value="desert">Desert Safari Experience</option>
-                                    <option value="culture">Cultural Heritage Tour</option>
-                                    <option value="custom">Custom Package</option>
-                                </select>
-                            </div>
-                            <div class="col-12">
-                                <label for="message" class="form-label">Special Requests</label>
-                                <textarea class="form-control" id="message" rows="3" placeholder="Any special requirements or questions"></textarea>
-                            </div>
-                            <div class="col-12 text-center mt-4">
-                                <button type="submit" class="btn btn-custom px-5">
-                                    <i class="fas fa-paper-plane me-2"></i> Submit Request
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6">
-                <div class="card p-4 animate__animated animate__fadeInUp animate__delay-6s h-100">
-                    <div class="card-header text-center">
-                        <h2>Why Choose Us?</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex mb-4">
-                            <div class="me-3 text-primary">
-                                <i class="fas fa-check-circle fa-2x"></i>
-                            </div>
-                            <div>
-                                <h5>Local Expertise</h5>
-                                <p>Our team consists of Jaisalmer natives with in-depth knowledge of the region's hidden gems.</p>
-                            </div>
-                        </div>
-
-                        <div class="d-flex mb-4">
-                            <div class="me-3 text-primary">
-                                <i class="fas fa-check-circle fa-2x"></i>
-                            </div>
-                            <div>
-                                <h5>Personalized Service</h5>
-                                <p>We tailor every experience to match your interests, pace, and budget.</p>
-                            </div>
-                        </div>
-
-                        <div class="d-flex mb-4">
-                            <div class="me-3 text-primary">
-                                <i class="fas fa-check-circle fa-2x"></i>
-                            </div>
-                            <div>
-                                <h5>24/7 Support</h5>
-                                <p>Our dedicated support team is available round the clock during your trip.</p>
-                            </div>
-                        </div>
-
-                        <div class="d-flex">
-                            <div class="me-3 text-primary">
-                                <i class="fas fa-check-circle fa-2x"></i>
-                            </div>
-                            <div>
-                                <h5>Sustainable Tourism</h5>
-                                <p>We're committed to responsible travel that benefits local communities.</p>
-                            </div>
-                        </div>
-
-                        <hr class="my-4">
-
-                        <div class="text-center">
-                            <h4 class="mb-3">Emergency Contact</h4>
-                            <a href="tel:+911234567890" class="btn btn-outline-danger">
-                                <i class="fas fa-phone-alt me-2"></i> +91-1234567890
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Live Chat -->
-        <div class="card p-4 mt-5 animate__animated animate__fadeInUp animate__delay-7s">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <h2 class="text-primary mb-3">Instant Assistance Available</h2>
-                    <p class="mb-md-0">Have urgent questions? Our travel experts are ready to help you in real-time through our live chat service.</p>
-                </div>
-                <div class="col-md-4 text-md-end">
-                    <button type="button" class="btn live-chat-btn px-4" data-bs-toggle="modal" data-bs-target="#chatModal">
-                        <i class="fas fa-comment-dots me-2"></i> Start Live Chat
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Live Chat Modal -->
-        <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content rounded-4">
-                    <div class="modal-header bg-primary text-white rounded-top-4">
-                        <h5 class="modal-title"><i class="fas fa-comment-dots me-2"></i> Live Chat Support</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="chat-container" style="height: 300px; overflow-y: auto; margin-bottom: 20px; border: 1px solid #eee; padding: 15px; border-radius: 10px;">
-                            <div class="chat-message chat-agent mb-3">
-                                <div class="d-flex">
-                                    <div class="flex-shrink-0 me-3">
-                                        <div class="bg-primary text-white rounded-circle p-2" style="width: 40px; height: 40px; text-align: center; line-height: 26px;">
-                                            <i class="fas fa-headset"></i>
-                                        </div>
-                                    </div>
-                                    <div class="flex-grow-1">
-                                        <div class="bg-light p-3 rounded">
-                                            <p class="mb-0">Hello! Welcome to Jaisalmer Tourism. How can I help you today?</p>
-                                        </div>
-                                        <small class="text-muted">Agent • Just now</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <textarea class="form-control mb-3" rows="3" placeholder="Type your message here..." style="resize: none;"></textarea>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <button type="button" class="btn btn-sm btn-outline-secondary me-2">
-                                    <i class="fas fa-paperclip"></i>
-                                </button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">
-                                    <i class="far fa-smile"></i>
-                                </button>
-                            </div>
-                            <button type="button" class="btn btn-custom" onclick="sendChat()">
-                                <i class="fas fa-paper-plane me-2"></i> Send
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/919876543210" class="whatsapp-float animate__animated animate__fadeInUp animate__delay-8s" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Footer -->
-    <footer class="animate__animated animate__fadeInUp">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-md-start">
-                    <h5>Jaisalmer Tourism</h5>
-                    <p>Discover the golden city's rich heritage and breathtaking landscapes with our expert guides.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <div class="social-icons">
-                        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-            <hr class="mt-3 mb-3" style="border-color: rgba(255,255,255,0.1);">
-            <div class="row">
-                <div class="col-md-6 text-md-start">
-                    <p class="mb-md-0"><i class="fas fa-map-marker-alt me-2"></i> Fort Road, Jaisalmer, Rajasthan, India</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p class="mb-0">&copy; 2025 Jaisalmer Tourism. All Rights Reserved.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        function sendChat() {
-            const chatContainer = document.querySelector('.chat-container');
-            const messageInput = document.querySelector('#chatModal textarea');
-
-            if (messageInput.value.trim() !== '') {
-                // Add user message
-                const userMessage = document.createElement('div');
-                userMessage.className = 'chat-message chat-user mb-3';
-                userMessage.innerHTML = `
-                    <div class="d-flex justify-content-end">
-                        <div class="flex-grow-1" style="max-width: 80%;">
-                            <div class="bg-primary text-white p-3 rounded">
-                                <p class="mb-0">${messageInput.value}</p>
-                            </div>
-                            <small class="text-muted">You • Just now</small>
-                        </div>
-                    </div>
-                `;
-                chatContainer.appendChild(userMessage);
-
-                // Scroll to bottom
-                chatContainer.scrollTop = chatContainer.scrollHeight;
-
-                // Clear input
-                messageInput.value = '';
-
-                // Simulate agent reply after 1 second
-                setTimeout(() => {
-                    const agentMessage = document.createElement('div');
-                    agentMessage.className = 'chat-message chat-agent mb-3';
-                    agentMessage.innerHTML = `
-                        <div class="d-flex">
-                            <div class="flex-shrink-0 me-3">
-                                <div class="bg-primary text-white rounded-circle p-2" style="width: 40px; height: 40px; text-align: center; line-height: 26px;">
-                                    <i class="fas fa-headset"></i>
-                                </div>
-                            </div>
-                            <div class="flex-grow-1">
-                                <div class="bg-light p-3 rounded">
-                                    <p class="mb-0">Thank you for your message! Our team will respond to you shortly.</p>
-                                </div>
-                                <small class="text-muted">Agent • Just now</small>
-                            </div>
-                        </div>
-                    `;
-                    chatContainer.appendChild(agentMessage);
-                    chatContainer.scrollTop = chatContainer.scrollHeight;
-                }, 1000);
-            }
-        }
-
-        // Animate elements when they come into view
-        document.addEventListener('DOMContentLoaded', function() {
-            const animateElements = document.querySelectorAll('.animate__animated');
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add(entry.target.dataset.animate);
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            animateElements.forEach(element => {
-                observer.observe(element);
-            });
-        });
-    </script>
-
-</body>
-
-</html>
-
+    </html>
+    >>>>>>> 29a02ed (added contact page)
