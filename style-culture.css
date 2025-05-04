@@ -1,0 +1,90 @@
+body {
+    background-color: #fdf5e6;
+    font-family: 'Verdana', sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #e17e45;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 14px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.summary {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: #d2691e;
+    margin-bottom: 1rem;
+}
+
+.culture-container {
+    margin-bottom: 3rem;
+}
+
+.culture-sub-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.culture-item {
+    background-color: #fff8dc;
+    border: 1px solid #deb887;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 45%;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.culture-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.culture-item h3, .culture-item h4 {
+    color: #d2691e;
+    margin-top: 1rem;
+}
+
+.music-sub-container, .dance-sub-container, .attire-sub-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.history-container {
+    background-color: #fff3cd;
+    padding: 2rem;
+    border-left: 6px solid #e17e45;
+    border-radius: 5px;
+}
+
+.history-item h3 {
+    color: #b05c1e;
+}
+
+.history p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}

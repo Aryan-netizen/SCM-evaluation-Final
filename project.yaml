@@ -1,0 +1,21 @@
+project:
+  title: "Jaisalmer Tourism Website"
+  description: "A simple multi-page tourism website showcasing the beauty, culture, and attractions of Jaisalmer."
+  technologies:
+    - HTML5
+    - CSS3
+    - GitHub
+  team:
+    - Aryan (Home Page)
+    - Diya (Contact Page)
+    - Deepanshu (Jaisalmer Fort Page)
+    - Bhavya (Dessert Page)
+    - Bhumika (Culture Page)
+  repository:
+    url: "https://github.com/Aryan-netizen/SCM-evaluation-Final.git"  
+  hosted_url: "https://scm-evaluation-final.vercel.app/"  
+  features:
+    - 5 HTML pages with individual CSS
+    - Unique designs per page
+    - Informative and user-friendly content
+  status: "Completed"
