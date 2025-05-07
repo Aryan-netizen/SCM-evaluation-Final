@@ -118,11 +118,11 @@ img:hover {
 }
 
 #word {
-  color: black; /* Default text color */
-  transition: color 0.4s ease-in-out; /* Smooth color change */
+  color: black; 
+  transition: color 0.4s ease-in-out; 
 }
 
 #word:hover {
-  color: red; /* New color on hover */
+  color: red; 
 }
 
