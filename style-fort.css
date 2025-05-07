@@ -125,4 +125,11 @@ img:hover {
 #word:hover {
   color: red; 
 }
+.content {
+  color: black;
+  transition: color 0.5s ease-in-out;
+}
 
+.content:hover {
+  color: red;
+}
